@@ -1,5 +1,6 @@
 import React from "react";
 import { Project } from "../types";
+import Logo from "./Logo";
 
 interface PrintableInvoiceProps {
   project: Project;
@@ -25,11 +26,14 @@ export default function PrintableInvoice({ project }: PrintableInvoiceProps) {
     <div className="p-8 max-w-4xl mx-auto bg-white text-slate-900 font-sans text-right" dir="rtl">
       {/* Invoice Header */}
       <div className="flex justify-between items-start border-b-2 border-slate-300 pb-6 mb-6">
-        <div>
-          <h1 className="text-2xl font-black text-slate-900">
-            {docType === "invoice" ? "חשבונית ופירוט עבודות" : "הצעת מחיר ופירוט עבודות"}
-          </h1>
-          <p className="text-xs text-slate-500 mt-1">מערכת תמחור דיגיטלית לחשמלאי מוסמך</p>
+        <div className="flex gap-4 items-center">
+          <Logo className="h-16 w-auto" />
+          <div>
+            <h1 className="text-2xl font-black text-slate-900">
+              {docType === "invoice" ? "חשבונית ופירוט עבודות" : "הצעת מחיר ופירוט עבודות"}
+            </h1>
+            <p className="text-xs text-slate-500 mt-1">מערכת תמחור דיגיטלית לחשמלאי מוסמך</p>
+          </div>
         </div>
         <div className="text-left">
           <h2 className="text-lg font-bold text-slate-800">{clientName || "פרויקט ללא שם"}</h2>
