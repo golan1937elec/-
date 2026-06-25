@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Assistant", "Rubik", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Custom styles */
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc; /* slate-50 */
+}
+
+#print-area {
+  display: none;
+}
+
+/* Print Overrides */
+@media print {
+  html, body {
+    background: white !important;
+    background-color: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    font-size: 11pt;
+    line-height: 1.4;
+    overflow: visible !important;
+  }
+
+  /* Completely collapse the main interactive app layout during printing */
+  #root > div {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    background-color: white !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure print:hidden elements are fully removed from layout */
+  .print\:hidden, [class*="print:hidden"] {
+    display: none !important;
+  }
+
+  /* Show ONLY the print area as a relative flow item */
+  #print-area {
+    display: block !important;
+    position: relative !important;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1.2cm !important;
+    direction: rtl !important;
+    background: white !important;
+  }
+
+  /* Page break rules */
+  .break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

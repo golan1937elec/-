@@ -1,0 +1,6 @@
+{
+  "name": "מחשבון עבודות חשמליה שער הגולן",
+  "description": "מערכת לניהול וחישוב עבודות חשמל, תמחור חומרים על בסיס מחירי עלות סיטונאיים, והפקת הצעות מחיר מומלצות ללקוחות.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
